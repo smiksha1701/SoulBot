@@ -18,5 +18,6 @@ def send_counter(message):
 def send_viabot(message):
     a[0]=bot.send_message(message.chat.id,1)
     a[0]=bot.edit_message_text(text=3,chat_id=a[0].chat.id,message_id=a[0].message_id)
+    bot.delete_message(message.chat.id,message.message_id)
     print(a[0])
 bot.polling(none_stop=True, interval=0)
