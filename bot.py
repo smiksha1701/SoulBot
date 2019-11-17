@@ -1,0 +1,25 @@
+import telebot
+import constants
+import time
+import telegram
+bot=telebot.TeleBot(constants.token)
+from datetime import datetime
+a=['' for i in range (100)]
+b=['' for i in range (100)]
+@bot.message_handler(commands=["ctart"])
+def send_counter(message):
+    """message1=bot.reply_to(message,1)
+    time.sleep(1)
+    for i in range(2,11):
+        bot.edit_message_text(text=i,chat_id=message1.chat.id,message_id=message1.message_id)
+        time.sleep(1)
+    bot.delete_message(chat_id=message1.chat.id,message_id=message1.message_id)
+    """
+    bot.delete_message(a[0].chat.id,a[0].message_id)
+@bot.message_handler(commands=["jopa"])
+def send_viabot(message):
+    a[0]=bot.send_message(message.chat.id,1)
+    a[0]=bot.edit_message_text(text=3,chat_id=a[0].chat.id,message_id=a[0].message_id)
+    print(a[0])
+telegram.KeyboardButton(text="start")
+bot.polling(none_stop=True, interval=0)
