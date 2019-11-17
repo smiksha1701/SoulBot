@@ -1,8 +1,6 @@
 import telebot
-import constants
 import time
-import telegram
-bot=telebot.TeleBot(constants.token)
+bot=telebot.TeleBot("866320791:AAGhkMNQSh5biaZyqCT4tWeQOqcyEetYgX0")
 from datetime import datetime
 a=['' for i in range (100)]
 b=['' for i in range (100)]
@@ -21,5 +19,4 @@ def send_viabot(message):
     a[0]=bot.send_message(message.chat.id,1)
     a[0]=bot.edit_message_text(text=3,chat_id=a[0].chat.id,message_id=a[0].message_id)
     print(a[0])
-telegram.KeyboardButton(text="start")
 bot.polling(none_stop=True, interval=0)
